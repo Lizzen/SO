@@ -1,2 +1,2 @@
 # SO
-Prácticas SO UCM 2022/23
+Prácticas de la asignatura Sistemas Operativos UCM 2022/23
