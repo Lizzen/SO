@@ -357,13 +357,28 @@ Marca cada paso cuando lo completes:
 ## 🔍 Preguntas de Autoevaluación
 
 1. ¿Qué diferencia hay entre `stat()` y `lstat()`?
+    - `stat()` sigue enlaces simbólicos y da información del archivo al que apuntan, mientras que `lstat()` da información del propio enlace simbólico.
+
 2. ¿Qué información contiene `struct stat`?
+    - Contiene metadatos del archivo: tipo, permisos, tamaño, número de bloques, propietario, fechas de acceso/modificación, etc.
+
 3. ¿Qué es `st_blocks` y en qué unidades está?
+    - Es el número de bloques de 512 bytes que ocupa el archivo en disco.
+
 4. ¿Por qué debemos ignorar "." y ".."?
+    - Porque representan el directorio actual y el padre. No ignorarlos causaría recursión infinita al procesar directorios.
+
 5. ¿Cómo funciona la recursión en este programa?
+    - Cuando se encuentra un directorio, se llama recursivamente a la función para procesar su contenido, sumando los bloques de todos los archivos y subdirectorios.
+
 6. ¿Cómo se convierte bloques de 512B a KB?
+    - Dividiendo el número de bloques entre 2 (o usando `(blocks + 1) / 2` para redondear hacia arriba).
+
 7. ¿Qué hace `readdir()` cuando no hay más entradas?
+    - Devuelve `NULL`, indicando que se han leído todas las entradas del directorio.
+
 8. ¿Por qué usamos `snprintf()` para construir rutas?
+    - Porque es más seguro que `sprintf()`, ya que evita desbordamientos de buffer al limitar el tamaño de la cadena resultante.
 
 ---
 
